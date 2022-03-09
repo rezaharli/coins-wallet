@@ -1,9 +1,9 @@
 package wallet
 
 import (
-	"behometest/application"
-	accountEntity "behometest/domain/entity/account"
-	paymentEntity "behometest/domain/entity/payment"
+	"coins-wallet/application"
+	accountEntity "coins-wallet/domain/entity/account"
+	paymentEntity "coins-wallet/domain/entity/payment"
 )
 
 type Service interface {

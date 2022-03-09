@@ -1,8 +1,8 @@
 package application
 
 import (
-	accountEntity "behometest/domain/entity/account"
-	"behometest/domain/repository"
+	accountEntity "coins-wallet/domain/entity/account"
+	"coins-wallet/domain/repository"
 )
 
 type Account interface {

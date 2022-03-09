@@ -5,9 +5,9 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"behometest/domain/entity/account"
-	"behometest/domain/entity/payment"
-	"behometest/infrastructure/inmem"
+	"coins-wallet/domain/entity/account"
+	"coins-wallet/domain/entity/payment"
+	"coins-wallet/infrastructure/inmem"
 )
 
 func TestCreateAccount_Success(t *testing.T) {

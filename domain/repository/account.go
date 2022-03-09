@@ -1,6 +1,6 @@
 package repository
 
-import "behometest/domain/entity/account"
+import "coins-wallet/domain/entity/account"
 
 type AccountRepository interface {
 	Get(id account.AccountID) (*account.Account, error)

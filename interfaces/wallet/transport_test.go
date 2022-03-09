@@ -10,7 +10,7 @@ import (
 	"github.com/go-kit/log"
 	"github.com/stretchr/testify/assert"
 
-	"behometest/infrastructure/inmem"
+	"coins-wallet/infrastructure/inmem"
 )
 
 func TestCreateAccountHandler_Success(t *testing.T) {

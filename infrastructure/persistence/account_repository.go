@@ -6,8 +6,8 @@ import (
 	_ "gorm.io/driver/postgres"
 	"gorm.io/gorm"
 
-	accountEntity "behometest/domain/entity/account"
-	"behometest/domain/repository"
+	accountEntity "coins-wallet/domain/entity/account"
+	"coins-wallet/domain/repository"
 )
 
 type AccountRepositoryImpl struct {

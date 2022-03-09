@@ -6,9 +6,9 @@ import (
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 
-	"behometest/domain/entity/account"
-	"behometest/domain/entity/payment"
-	"behometest/domain/repository"
+	"coins-wallet/domain/entity/account"
+	"coins-wallet/domain/entity/payment"
+	"coins-wallet/domain/repository"
 )
 
 type Repositories struct {

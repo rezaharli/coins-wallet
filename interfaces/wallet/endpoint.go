@@ -5,8 +5,8 @@ import (
 
 	"github.com/go-kit/kit/endpoint"
 
-	"behometest/domain/entity/account"
-	"behometest/domain/entity/payment"
+	"coins-wallet/domain/entity/account"
+	"coins-wallet/domain/entity/payment"
 )
 
 type createAccountResponse struct {

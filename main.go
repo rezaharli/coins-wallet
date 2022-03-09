@@ -10,8 +10,8 @@ import (
 
 	"github.com/go-kit/log"
 
-	"behometest/infrastructure/persistence"
-	"behometest/interfaces/wallet"
+	"coins-wallet/infrastructure/persistence"
+	"coins-wallet/interfaces/wallet"
 )
 
 func main() {

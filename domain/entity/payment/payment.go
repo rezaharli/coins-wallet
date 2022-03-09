@@ -3,7 +3,7 @@ package payment
 import (
 	"errors"
 
-	"behometest/domain/entity/account"
+	"coins-wallet/domain/entity/account"
 )
 
 type PaymentDirection string

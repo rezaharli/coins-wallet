@@ -3,9 +3,9 @@ package application
 import (
 	"testing"
 
-	accountEntity "behometest/domain/entity/account"
-	paymentEntity "behometest/domain/entity/payment"
-	"behometest/infrastructure/inmem"
+	accountEntity "coins-wallet/domain/entity/account"
+	paymentEntity "coins-wallet/domain/entity/payment"
+	"coins-wallet/infrastructure/inmem"
 
 	"github.com/stretchr/testify/assert"
 )

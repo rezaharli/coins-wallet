@@ -10,7 +10,7 @@ import (
 	kitlog "github.com/go-kit/log"
 	"github.com/gorilla/mux"
 
-	"behometest/domain/entity/account"
+	"coins-wallet/domain/entity/account"
 )
 
 func MakeHandler(service Service, logger kitlog.Logger) http.Handler {

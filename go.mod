@@ -1,4 +1,4 @@
-module behometest
+module coins-wallet
 
 go 1.17
 
