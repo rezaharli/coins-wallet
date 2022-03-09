@@ -18,6 +18,7 @@ type service struct {
 	payment application.Payment
 }
 
+// NewService creates new wallet service
 func NewService(accountApp application.Account, paymentApp application.Payment) Service {
 	return &service{
 		account: accountApp,
@@ -25,18 +26,22 @@ func NewService(accountApp application.Account, paymentApp application.Payment) 
 	}
 }
 
+// CreateAccount creates account
 func (s *service) CreateAccount(account accountEntity.Account) error {
 	return s.account.Create(account)
 }
 
+// GetAllAccount get all accounts
 func (s *service) GetAllAccount() ([]accountEntity.Account, error) {
 	return s.account.GetAll()
 }
 
+// GetAllPayment get all payments
 func (s *service) GetAllPayment() ([]paymentEntity.Payment, error) {
 	return s.payment.GetAll()
 }
 
+// Transfer doing transfer some amount from sender to receiver
 func (s *service) Transfer(senderId, receiverId accountEntity.AccountID, amount float32) ([]paymentEntity.Payment, error) {
 	if amount <= 0 {
 		return nil, paymentEntity.ErrAmountZero

@@ -16,10 +16,12 @@ type PaymentRepositoryImpl struct {
 	Conn *gorm.DB
 }
 
+// NewAccountRepository creates new repository for payment
 func NewPaymentRepository(conn *gorm.DB) repository.PaymentRepository {
 	return &PaymentRepositoryImpl{Conn: conn}
 }
 
+// GetAll gets all payment data from db
 func (r *PaymentRepositoryImpl) GetAll() ([]paymentEntity.Payment, error) {
 	payment := []paymentEntity.Payment{}
 	if err := r.Conn.Find(&payment).Error; err != nil {
@@ -28,6 +30,7 @@ func (r *PaymentRepositoryImpl) GetAll() ([]paymentEntity.Payment, error) {
 	return payment, nil
 }
 
+// Save save all account and payments data to db
 func (r *PaymentRepositoryImpl) Save(sender, receiver *accountEntity.Account, payments *[]paymentEntity.Payment) error {
 	r.mtx.Lock()
 	defer r.mtx.Unlock()

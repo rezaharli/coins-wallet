@@ -4,8 +4,10 @@ import (
 	"errors"
 )
 
+// AccountID type of the account ID
 type AccountID string
 
+// Account represent entity of the account
 type Account struct {
 	ID       AccountID `json:"id" gorm:"primaryKey"`
 	Balance  float32   `json:"balance"`

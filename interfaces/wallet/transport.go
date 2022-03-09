@@ -13,6 +13,7 @@ import (
 	"coins-wallet/domain/entity/account"
 )
 
+// MakeHandler registers handlers used by the application
 func MakeHandler(service Service, logger kitlog.Logger) http.Handler {
 	opts := []kithttp.ServerOption{
 		kithttp.ServerErrorHandler(transport.NewLogErrorHandler(logger)),

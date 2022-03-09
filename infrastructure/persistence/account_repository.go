@@ -14,10 +14,12 @@ type AccountRepositoryImpl struct {
 	Conn *gorm.DB
 }
 
+// NewAccountRepository creates new repository for account
 func NewAccountRepository(conn *gorm.DB) repository.AccountRepository {
 	return &AccountRepositoryImpl{Conn: conn}
 }
 
+// Get gets account data by id from db
 func (r *AccountRepositoryImpl) Get(id accountEntity.AccountID) (*accountEntity.Account, error) {
 	account := &accountEntity.Account{}
 	if err := r.Conn.First(&account, id).Error; err != nil {
@@ -26,6 +28,7 @@ func (r *AccountRepositoryImpl) Get(id accountEntity.AccountID) (*accountEntity.
 	return account, nil
 }
 
+// GetAll gets all account datas from db
 func (r *AccountRepositoryImpl) GetAll() ([]accountEntity.Account, error) {
 	accounts := []accountEntity.Account{}
 	if err := r.Conn.Find(&accounts).Error; err != nil {
@@ -34,6 +37,7 @@ func (r *AccountRepositoryImpl) GetAll() ([]accountEntity.Account, error) {
 	return accounts, nil
 }
 
+// Create new account data to db
 func (r *AccountRepositoryImpl) Create(account accountEntity.Account) error {
 	if err := r.Conn.Create(&account).Error; err != nil {
 		if strings.Contains(err.Error(), "duplicate") || strings.Contains(err.Error(), "Duplicate") {

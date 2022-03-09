@@ -9,6 +9,7 @@ type accountRepository struct {
 	accounts map[accountEntity.AccountID]*accountEntity.Account
 }
 
+// Get mimics Get from account_repository
 func (r *accountRepository) Get(id accountEntity.AccountID) (*accountEntity.Account, error) {
 	if account, ok := r.accounts[id]; ok {
 		return account, nil
@@ -16,6 +17,7 @@ func (r *accountRepository) Get(id accountEntity.AccountID) (*accountEntity.Acco
 	return nil, accountEntity.ErrUnknown
 }
 
+// GetAll mimics GetAll from account_repository
 func (r *accountRepository) GetAll() ([]accountEntity.Account, error) {
 	accounts := make([]accountEntity.Account, 0, len(r.accounts))
 	for _, val := range r.accounts {
@@ -24,6 +26,7 @@ func (r *accountRepository) GetAll() ([]accountEntity.Account, error) {
 	return accounts, nil
 }
 
+// Create mimics Create from account_repository
 func (r *accountRepository) Create(account accountEntity.Account) error {
 	if _, ok := r.accounts[account.ID]; ok {
 		return accountEntity.ErrAlreadyExist
@@ -33,6 +36,8 @@ func (r *accountRepository) Create(account accountEntity.Account) error {
 	return nil
 }
 
+// NewAccountRepository creates new inmem repository for account
+// contains 3 predefined data
 func NewAccountRepository() repository.AccountRepository {
 	r := &accountRepository{
 		accounts: make(map[accountEntity.AccountID]*accountEntity.Account),

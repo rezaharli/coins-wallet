@@ -17,6 +17,7 @@ type Repositories struct {
 	PaymentRepository repository.PaymentRepository
 }
 
+// NewRepositories creates repository instance with db attached
 func NewRepositories(DbHost, DbPort, DbUser, DbName, DbPassword string) (*Repositories, error) {
 	dsn := fmt.Sprintf("host=%s port=%s user=%s dbname=%s sslmode=disable password=%s", DbHost, DbPort, DbUser, DbName, DbPassword)
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})

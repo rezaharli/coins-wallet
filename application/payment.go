@@ -17,10 +17,12 @@ type payment struct {
 	paymentRepository repository.PaymentRepository
 }
 
+// GetAll returns all payments
 func (s *payment) GetAll() ([]paymentEntity.Payment, error) {
 	return s.paymentRepository.GetAll()
 }
 
+// Save saves payments
 func (s *payment) Save(sender, receiver *accountEntity.Account, payments *[]paymentEntity.Payment) error {
 	return s.paymentRepository.Save(sender, receiver, payments)
 }
