@@ -14,7 +14,14 @@ type Account struct {
 	Currency string    `json:"currency"`
 }
 
+// ErrUnknown unknown account error
 var ErrUnknown = errors.New("unknown account")
+
+// ErrAlreadyExist account already exist error
 var ErrAlreadyExist = errors.New("account already exist")
+
+// ErrInsufficientBalance insufficient balance error
 var ErrInsufficientBalance = errors.New("insufficient balance")
+
+// ErrCurrencyMismatch currency mismatch error
 var ErrCurrencyMismatch = errors.New("currency mismatch")
