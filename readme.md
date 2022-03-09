@@ -40,6 +40,9 @@ go run main.go
 # API Endpoint : http://localhost:8000/v1/
 ```
 
+#### API Endpoint list
+- refer to https://github.com/rezaharli/coins-wallet/blob/main/docs/api.md
+
 ## Run Tests
 
 This command run the unit tests
